@@ -12,11 +12,11 @@ public class ex3 extends JFrame {
     	 ButtonListener a=new ButtonListener();
     	  setSize(600,500);
     	  JPanel p=new JPanel();
-    	  b=new JButton("°Ë»ö");
+    	  b=new JButton("ê²€ìƒ‰");
     	  b.addActionListener(a);
-    	  l1=new JLabel("°øºÎÇÏ°í ½ÍÀº °ú¸ñÀ» °Ë»öÇÏ½Ã¿À.");
-    	  label3=new JLabel("¶Ç´Â ");
-          l2=new JLabel("¿øÇÏ´Â ±³¼ö¸íÀ» °Ë»öÇÏ¼¼¿ä.") ; 
+    	  l1=new JLabel("ê³µë¶€í•˜ê³  ì‹¶ì€ ê³¼ëª©ì„ ê²€ìƒ‰í•˜ì‹œì˜¤.");
+    	  label3=new JLabel("ë˜ëŠ” ");
+          l2=new JLabel("ì›í•˜ëŠ” êµìˆ˜ëª…ì„ ê²€ìƒ‰í•˜ì„¸ìš”.") ; 
           t1=new JTextField(15);
          
           t2=new JTextField(10);
@@ -33,11 +33,11 @@ public class ex3 extends JFrame {
       }
       class ButtonListener implements ActionListener { 
     	  public void actionPerformed(ActionEvent e) {
-    		  if(e.getSource()==b) { //getSource´ÙÀ½¿¡ ¹«Á¶°Ç ()ÇÏ±â.
+    		  if(e.getSource()==b) { //getSourceë‹¤ìŒì— ë¬´ì¡°ê±´ ()í•˜ê¸°.
     			  
-    			//°Ë»öÇÑ °ú¸ñÀÌ¸§ÀÌ³ª ±³¼ö¸íÀ» ¾÷·ÎµåµÈ ¿µ»ó¸í°ú ¹®ÀÚ¿­ ºñ±³ÇÏ±â.
-                  // ºñ±³ÀÇ °á°ú·Î ÇØ´ç ¹®ÀÚ¿­ÀÌ ÀÖ´Â ¿µ»ó ¶ß°Ô ÇÏ´Â ºÎºĞ.
-                  // Áï ¿øÇß´ø °ú¸ñÀÌ³ª ±³¼ö¿¡ ÇØ´çÇÏ´Â °­ÀÇ°¡ ³ªÅ¸³ª°Ô ÇÏ´Â ºÎºĞ
+    			//ê²€ìƒ‰í•œ ê³¼ëª©ì´ë¦„ì´ë‚˜ êµìˆ˜ëª…ì„ ì—…ë¡œë“œëœ ì˜ìƒëª…ê³¼ ë¬¸ìì—´ ë¹„êµí•˜ê¸°.
+                  // ë¹„êµì˜ ê²°ê³¼ë¡œ í•´ë‹¹ ë¬¸ìì—´ì´ ìˆëŠ” ì˜ìƒ ëœ¨ê²Œ í•˜ëŠ” ë¶€ë¶„.
+                  // ì¦‰ ì›í–ˆë˜ ê³¼ëª©ì´ë‚˜ êµìˆ˜ì— í•´ë‹¹í•˜ëŠ” ê°•ì˜ê°€ ë‚˜íƒ€ë‚˜ê²Œ í•˜ëŠ” ë¶€ë¶„
 
     		  }
     		  
