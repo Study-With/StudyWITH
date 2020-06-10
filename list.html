@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>게시판 목록</title>
+    <link href="list_page.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <script src="script.js"></script>
+    <div class="board_list_wrap">
+      <table class="board_list">
+      <caption> 게시판 리스트</caption>
+      <thread>
+        <tr>
+          <th>번호</th>
+          <th>제목</th>
+          <th>작성자</th>
+          <th>작성일</th>
+          <th>조회수</th>
+          </tr>
+      </thread>
+      <tbody>
+        <tr>
+          <td>3</td>
+          <td class="title">
+             <a href="#">전자공학</a>
+             </td>
+          <td>멘토1</td>
+          <td>2018-09-09</td>
+          <td>1</td>
+        </tr>
+        
+        <tr>
+          <td>2</td>
+           <td class="title">
+              <a href="#">물리</a>
+              </td>
+          <td>멘토2</td>
+          <td>2018-09-09</td>
+          <td>4</td>
+        </tr>
+
+         <tr>
+          <td>1</td>
+           <td class="title">
+            <a href="#">컴퓨터</a>
+            </td>
+          <td>멘토3</td>
+          <td>2018-09-09</td>
+          <td>5</td>
+        </tr>
+      </tbody>
+      </table>
+      <div class="paging">
+        <a href="#"><<</a>
+        <a href="#"><</a>
+        <a href="#">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">></a>
+        <a href="#">>></a>
+      </div>
+
+      <div class="write">
+        <button type="button" onclick="location.href='write_page.html'"> 글쓰기 </button>
+      </div>
+
+    </div>
+  </body>
+</html>
