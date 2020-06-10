@@ -1,0 +1,40 @@
+.nav{
+  height: 70px;
+  border-bottom: 1px solid black;
+  display: flex;
+  align-items: center;
+}
+
+.board{
+  display: flex;
+  margin-left: 20px;
+  
+}
+
+.board-item{
+  margin-left: 30px;
+}
+
+.nav-right-items{
+  display: flex;
+  margin-left: auto;
+}
+
+.nav-item{
+  margin-left: 10px;
+}
+
+.company-name{
+  margin-left: 20px;
+}
+
+.nav-right-items-button{
+   color: #007bff;
+  background-color: transparent;
+  background-image: none;
+  border-color: #007bff;
+  padding: .5rem 1rem;
+  font-size: 15px;
+  line-height: 1.5;
+  border-radius: .3rem;
+}
