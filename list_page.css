@@ -25,7 +25,8 @@ a{
 }
 .board_list{
  width:100%;
- border-top: 2px solid  #ff0000bd
+ border-top: 2px solid  #ff0000bd;
+ background: rgba(255, 255, 255, 0.551);
 }
 .board_list tr{
   border-bottom:1px solid #ccc;
@@ -34,6 +35,7 @@ a{
 .board_list td{
   padding : 10px;
   font-size: 14px;
+  
 
 }
 
@@ -59,7 +61,7 @@ a{
   display:  inline-block;
   margin-left: 10px;
   padding: 5px 10px;
-  font-size: 12px;
+  font-size: 15px;
 }
 
 .board_list_wrap .write{
