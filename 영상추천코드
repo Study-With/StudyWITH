@@ -1,0 +1,43 @@
+import java.util.ArrayList;
+
+public class Recommendation {
+	static int DB_SIZE = 1000;
+	
+	public static void main(String[] args) {
+		String input; //웹서버로 부터 받아온 동영상
+		String[] result = new String[5]; //5개의 영상을 추천한다
+		int count = 0; //추천영상의 갯수를 세기위한 변수
+		
+		//임의로 DB에 영상들이 저장되있다고 가정("과목명 "+"게시물번호")의 형식으로 저장되있다고 가정 
+		ArrayList<String> DB = new ArrayList<String>();
+		for(int i = 0; i < DB_SIZE; i++) {
+			int groupNum = i % 10;
+			switch(groupNum) {
+			case 0: DB.add("자료구조 "+i); break;
+			case 1: DB.add("전자장 "+i); break;
+			case 2: DB.add("알고리즘 "+i); break;
+			case 3: DB.add("전자회로 "+i); break;
+			case 4: DB.add("회로이론 "+i); break;
+			case 5: DB.add("논리회로 "+i); break;
+			case 6: DB.add("오토마타 및 형식언어 "+i); break;
+			case 7: DB.add("전자소자 "+i); break;
+			case 8: DB.add("운영체제 "+i); break;
+			case 9: DB.add("자바프로그래밍 "+i);
+			}
+		}
+		
+		input = new String("전자회로 "+33); //과목명:전자회로 게시물번호:53을 선택
+		String[] input_key = input.split(" "); //과목명으로 검색하기위해 input의 key값을 과목명으로 한다.
+		
+		for(int i=0;i<DB_SIZE;i++) {
+			String[] DB_key = DB.get(i).split(" "); //DB의 key값 또한 과목명
+			//과목명이 같은 추천영상 5개를 골라서 result배열에저장(input으로 받은 영상은 과목명이 같지만 추천영상에서 제외)
+			if( input_key[0].equals(DB_key[0]) && input.equals(DB.get(i)) != true ) {
+				result[count++] = DB.get(i);
+				if(count > 4) break; //추천영상 5개까지만 result배열에 저장
+			}
+		}
+		for(int i=0;i<count;i++)
+			System.out.println("추천영상"+(i+1)+": "+result[i]);
+	}
+}
