@@ -1,4 +1,72 @@
 *{
   margin: 0;
-  padding: 0;
+  padding: 0; 
+}
+h1 {
+color: black;
+text-align: left;
+font-size: 30px;
+padding: 20px;
+background: rgba(255, 255, 255, 0.551);
+border-top: 2px solid  #ff0000bd;
+
+}
+
+body{
+  background: url("image/list_bg.jpg");
+  }
+
+table{
+  border-collapse:  collapse;
+}
+
+caption{
+ display: none;
+}
+a{
+  text-decoration: none;
+  color: inherit;
+}
+.write_form_wrap{
+ padding: 50px;
+}
+.write_form{
+ width:100%;
+ border-top: 2px solid  #ff0000bd;
+ background: rgba(255, 255, 255, 0.551);
+}
+.write_form tr{
+  border-bottom:1px solid #ccc;
+}
+.write_form td{
+  padding : 5px;
+  font-size: 14px;
+  text-align: center;
+}
+
+
+
+.write_form_wrap .write{
+  text-align: right;
+  }
+
+  .write_form_wrap .write button{
+display:inline-block;width:50px;border:1px solid #ff0000bd; border-radius: 5px; background-color: #ff0000bd;color:#ffffff;margin:10px auto;padding:7px 0;text-align:center
+  }
+
+.write_form .user_Input{
+  width: 80%;
+  border-left : 1px solid #ccc;
+}
+.write_form .user_Input .user_Input_box{
+  
+  width: 100%;
+  height: 20px;
+  font-size:14px;
+}
+.write_form .user_Input .user_Input_content_box{
+  
+  width: 100%;
+  height: 80px;
+  font-size:14px;
 }
