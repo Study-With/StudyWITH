@@ -3,10 +3,45 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>쓰기 페이지</title>
+    <title>게시판 목록</title>
     <link href="write_page.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
     <script src="script.js"></script>
+    <div class="write_form_wrap"> <!--전체 -->
+      <table class="write_form"> <!-- 표-->
+      <caption> 게시글 업로드</caption>
+       <h1>게시글 등록</h1>
+
+
+      <tbody>
+        <tr>
+          <td>제목</td>
+          <td class="user_Input">
+             <input class="user_Input_box"type="title">
+             </td>
+        </tr>
+        
+        <tr>
+          <td>작성자</td> <!--불러와야될거같음.-->
+           <td class="user_Input">
+               <input class="user_Input_box"type="title">
+              </td>
+        </tr>
+
+         <tr>
+          <td>내용</td>
+            <td class="user_Input">
+               <input class="user_Input_content_box"type="title">
+            </td>
+        </tr>
+      </tbody>
+      </table>
+      <div class="write">
+        <button type="button" onclick="location.href='index.html'"> 목록 </button>
+        <button type="button" onclick="location.href='#'"> 저장 </button> <!--db에 저장해야함.-->
+      </div>
+
+    </div>
   </body>
 </html>
