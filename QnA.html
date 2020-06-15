@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>게시판 목록</title>
+    <link href="QnA_page.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <script src="script.js"></script>
+    <div class="board_list_wrap"> <!--전체 -->
+      <table class="board_list"> <!-- 표-->
+      <caption> 게시판 리스트</caption>
+      <h1> 질의 응답 </h1>
+      <thread>
+         <tr>
+          <th>번호</th>
+          <th>제목</th>
+          <th>작성자</th>
+          <th>작성일</th>
+          <th>조회수</th>
+          </tr>
+      </thread>
+      <tbody>
+         <tr>
+          <td>3</td> <!--db에 생성될때마다 이러한 양식으로 생성되야됨.. -->
+          <td class="title">
+             <a href="#">전자공학에 대한 질문입니다.</a>
+             </td>
+          <td>멘티1</td>
+          <td>2018-09-09</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td> ⤷</td>
+          <td class="title" colspan="3">
+            <a href="#">답변입니다.</a> </td>
+          <td> 6</td>
+        </tr>
+        
+          <tr>
+          <td>2</td>
+           <td class="title">
+              <a href="#">물리전자에 대한 질문입니다.</a>
+              </td>
+          <td>멘티2</td>
+          <td>2018-09-09</td>
+          <td>4</td>
+        </tr>
+        <tr>
+          <td> ⤷</td>
+          <td class="title" colspan="3">  
+            <a href="#">답변입니다.</a> </td>
+          <td> 6</td>
+        </tr>
+
+          <tr>
+          <td>1</td>
+           <td class="title">
+            <a href="#">컴퓨터공학에 대한 질문..</a>
+            </td>
+          <td>멘티3</td>
+          <td>2018-09-09</td>
+          <td>5</td>
+        </tr>
+        <tr>
+          <td> ⤷</td>
+          <td class="title" colspan="3">  
+            <a href="#">답변입니다.</a> </td>
+          <td> 6</td>
+        </tr>
+      </tbody>
+      </table>
+      <div class="paging">  <!--일정페이지가 넘어가면 숫자가 늘어나야함.. -->
+        <a href="#"><<</a>
+        <a href="#"><</a>
+        <a href="#">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">></a>
+        <a href="#">>></a>
+      </div>
+
+      <div class="write">
+        <button type="button" onclick="location.href='write_page.html'"> 글쓰기 </button>
+      </div>
+
+    </div>
+  </body>
+</html>
