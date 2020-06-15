@@ -1,0 +1,77 @@
+*{
+  margin: 0;
+  padding: 0; 
+}
+h1{
+  padding: 10px;
+  text-align: center;
+}
+body{
+  background: url("image/list_bg.jpg");
+}
+
+table{
+  border-collapse:  collapse;
+}
+
+caption{
+ display: none;
+}
+a{
+  text-decoration: none;
+  color: inherit;
+}
+.board_list_wrap{
+ padding: 50px;
+ 
+}
+.board_list{
+ width:100%;
+ border-top: 2px solid  #ff0000bd;
+ background: rgba(255, 255, 255, 0.551);
+}
+.board_list tr{
+  border-bottom:1px solid #ccc;
+}
+.board_list th,
+.board_list td{
+  padding : 10px;
+  font-size: 14px;
+}
+
+
+.board_list td{
+  text-align: center;
+}
+
+.board_list .title{
+  background: rgba(255, 255, 255, 0); /*배경색*/
+  text-align: left;
+}
+
+.board_list .title:hover{
+  text-decoration:  underline
+}
+
+.board_list_wrap .paging{
+  margin-top: 10px;
+  font-size:  0;
+  text-align: center;
+}
+.board_list_wrap .paging a{
+  display:  inline-block;
+  margin-left: 10px;
+  padding: 5px 10px;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.551);
+  font-size: 15px;
+
+}
+
+.board_list_wrap .write{
+  text-align: right;
+  }
+
+  .board_list_wrap .write button{
+display:inline-block;width:50px;border:1px solid #ff0000bd; border-radius: 5px; background-color: #ff0000bd;color:#ffffff;margin:10px auto;padding:7px 0;text-align:center
+  }
