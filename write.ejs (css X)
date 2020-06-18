@@ -1,0 +1,28 @@
+# 글쓰기 누르면 제목이랑 내용 작성하는 칸으로 넘어가는데 넘어간 그 페이지에 대한 내용.
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>write</title>
+</head>
+<body>
+    글쓰기
+    <form action="/" method="POST">
+        게시글제목 <input type = "text" name="title">
+        게시글내용 <input type = "text" name="body">
+        <button>
+                POST
+        </button>
+        <br><br><br><br>
+        <button>
+            <a href = "/">
+            나가기
+            </a>
+        </button>
+    </form>
+    
+</body>
+</html>
