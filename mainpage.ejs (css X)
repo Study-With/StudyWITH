@@ -1,0 +1,64 @@
+#mainpage
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <title>영상검색게시판</title>
+    
+</head>
+<body>
+    <h1>영상검색게시판</h1>
+    <p>찾고자 하는 영상명을 입력하세요! 간략한 키워드 일수록 찾기 쉽습니다.</p>
+    <div class = "search" align = "center">
+        
+        검색: <input type = "text " />
+        <button>
+            <a href = https://studywith--te060499.repl.co/search.html>
+            Search
+            </a>
+        </button>
+    </div>
+    <br><br><br>
+
+
+    <button class = "write" >
+        <a href = "/write">
+        글쓰기
+        </a>
+    </button>
+
+
+    <br>
+    <% var j=1 %>
+    <table border = "1" height="280" align = "center">
+        <thread>
+        <tr bgcolor = "yellow"" align = "center">
+            <th width = "100">번호</th>
+            <th width="300">제목</th>
+            <th width="200">작성일</th>
+        </tr>
+        </thread>
+    <tbody>
+        <% for(var i=0; i<posts.length; i++){ %>
+        <tr>
+            <td align = "center">
+                <%= j++ %>
+            </td>
+            <td align = "center">
+                <a href="/<%= posts[i].id %>">
+                    <%= posts[i].title %>
+                </a>
+            </td>
+            <td align = "center">
+                <%= posts[i].createdAt %>
+            </td>
+        </tr>
+        <% } %>
+    </tbody>
+    
+</body>
+</html>
