@@ -1,0 +1,18 @@
+# 게시글 수정 누르면 수정하기 버튼 뜨는데, 그 버튼에 대한 내용!
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%=post.title%></title>
+</head>
+<body>
+    <form action="/update_post/<%= post.id %>" method="POST">
+        <input name="title" value="<%= post.title %>">
+        <input name="body" value="<%= post.body %>">
+        <button>수정하기</button>
+    </form>
+</body>
+</html>
