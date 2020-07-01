@@ -1,0 +1,97 @@
+import java.sql.Connection; //db연결할 때 필요
+import java.sql.DriverManager; //드라이버 구동시 필요
+import java.sql.ResultSet;
+import java.sql.SQLException; //예외처리시 필요
+import java.sql.Statement;
+import java.sql.*;
+import java.io.*;
+
+public class DBA2 { // db에서 데이터 들고오기
+	public static Connection makeConnection() {
+		String JDBC_DRIVER = "com.mysql.jdbc.Driver"; // jdbc 드라이버 주소
+		String DB_URL = "jdbc:mysql://localhost:3306/video_db"; // 안돼면 ? 빼기.
+		// db url
+		// url매개변수는.. jdbc:mysql:subname
+		// subname은 데이터 베이스의 이름.
+		// 데이터베이스 이름은 화면 젤 앞에 뜬 이름 -> swith
+		// 로컬 컴퓨터에 있는 db라면.... //localhost:3306/
+		// localhost는 접속하려는 데이터베이스 주소를 입력하시면 됩니다. localhost를 사용하면 됩니다.
+		// 3306은 데이터베이스에 접속할때 사용하는 포터번호입니다. 설치할때 설정한 포트번호를 사용합니다.
+		// databasename에는 접속하려는 database의 name을 입력해줍니다.
+
+		String USERNAME = "root"; // DB ID
+		String PASSWORD = "5639"; // DB Password
+
+		// MySql에 사용하는여러 객체를 만들어줍니다.
+		Connection conn = null; // db연결
+		Statement stmt = null;
+		ResultSet rs = null;
+
+		// System.out.print("User Table 접속 : ");
+
+		try {
+			Class.forName(JDBC_DRIVER);
+			// jdbc_driver는 자바가 db에 접근할 수 있게하는 드라이버.
+			// Class 클래스의 forName()함수를 이용 -> JDBC_DRIVER(jdbc driver 주소)를 프로그램 안으로 load.
+			System.out.println("드라이버 load 성공");
+
+			conn = DriverManager.getConnection(DB_URL, USERNAME, PASSWORD);
+			// db에 연결
+			// DriverManager클래스의 getConnection()을 호출 -> db에 연결
+			// URL, ID, password를 입력하여 데이터베이스에 접속합니다.
+			System.out.println("데이터베이스 연결 성공");
+
+			/*
+			 * // 접속결과를 출력합니다. if (conn != null){System.out.println("성공");}
+			 * else{System.out.println("실패");}
+			 */
+		}
+
+		catch (ClassNotFoundException e) {// forName()은 ClassNotFoundException을 발생시킬 수 있음.
+			System.out.println("드라이버 찾을 수 없음.");
+			e.printStackTrace();
+		}
+
+		catch (SQLException e) { // getconnection()은 SQLException을 발생시킬 수 있음.
+			System.out.println("db 연결에 실패.");
+			e.printStackTrace();
+		}
+		return conn;
+	}
+
+	public static void main(String arg[]) throws SQLException, IOException { // main 함수
+		BufferedReader inputStream = null;
+		PrintWriter outputStream = null;
+		String line;
+		String[] input;
+		String output;
+		boolean proceed = true; // 추천영상 한개 검색완료되면 검색멈추도록 할 변수
+		Connection conn = makeConnection(); // db연결
+		Statement stmt = conn.createStatement(); // db연결한것에 문장객체 생성
+		ResultSet rs = stmt.executeQuery("SELECT * FROM videos");
+		while (rs.next() && proceed) { // 레코드 하나씩 처리.
+			// 결과집합 rs에서 tilte를 하나씩 들고 온다 -> title(변수 이름)에 저장한다.
+			String title = rs.getString("title");
+			// title에서 '/'기준으로 문자열을 자른다.
+			String[] title_split = title.split("/");
+			try {
+				inputStream = new BufferedReader(new FileReader("input.txt"));
+				outputStream = new PrintWriter(new FileWriter("output.txt"));
+				line = inputStream.readLine();
+				input = line.split("/");
+				if (title_split[1].equals(input[1]) && !title.equals(line)) {// 과목명은 같으면서 사용자가 선택한 게시물과 똑같은 게시물이 아닌경우
+					proceed = false; // 하나의 추천영상만 output.txt에 저장후 while반복문중단				
+					outputStream.println(title);
+					System.out.println("output.txt에 추천영상 출력완료");
+				}
+			}finally {
+				if(inputStream != null) {
+					inputStream.close();
+				}if(outputStream != null) {
+					outputStream.close();
+				}
+			}
+		}
+		System.out.println("시스템종료");
+	}
+}
